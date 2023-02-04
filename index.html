@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Demo Análisis de emociones con IA</title>
+    <title>Analysis of emotions with AI</title>
     <style>
 
 #videoElement {
@@ -72,23 +72,23 @@
   	content: "";
   	display: table;
 	}
-  .titulo{
+  .title{
     text-align: center;
     padding-top: 1%;
     padding-bottom: 2%;
   }
   
-  .atencion {
+  .Attention {
     padding-left: 8%;
     padding-top: 5%;
     
   }
-  .mostla{
+  .Morphcast{
     display: flex;
     justify-content: center;
     padding-right: 15%;
   }
-  .botonIniciar{
+  .startbutton{
     display: flex;
     justify-content: center;
     padding-right: 20%;
@@ -119,8 +119,8 @@
 
 
 <!-- elements of the page -->
-<div class="titulo">
-  <h1>Análisis de emociones con inteligencia artificial</h1>
+<div class="title">
+  <h1>Analysis of emotions with AI</h1>
 </div>
 <div class = "row">
 <div class = "column">
@@ -129,13 +129,13 @@
   </video>
 </div>
 <div class="hide">
-<div><b>Resultados</b></div>
-<div id="age">Edad estimada: -</div>
-<div id="gender">Sexo estimado: -</div>
-<div id="emotion">Emoción dominante: -</div>
+<div><b>Results</b></div>
+<div id="age">Likely Age: -</div>
+<div id="gender">Likely Gender: -</div>
+<div id="emotion">Dominant Emotion: -</div>
 </div>
-<div class="atencion">
-<span>Nivel de atención:</span>
+<div class="Attention">
+<span>Level of Attention:</span>
 <div id="myProgress">
     <div id="myBar"></div>
 </div>
@@ -146,18 +146,18 @@
 </div>
 <div class = "column">
   <div class = "derecha">
-    <span>Histograma de Emociones:</span>
+    <span>Histogram of Emotions:</span>
     <div id="chart"></div>
   </div>
-  <div class="mostla">
-    <h1>Proyecto en desarrollo, realizado por Mostla</h1>
+  <div class="Morphcast">
+    <h1>Project under development, carried out from Morphcast</h1>
   </div>
-  <div class="botonIniciar">
+  <div class="startbutton">
   <div id="start_over">
-    <span>HAGA CLICK PARA EMPEZAR</span>
+    <span>CLICK TO START</span>
   </div>
   <div id="imagen">
-    <img src="./mostla.jpg" alt="tec">
+    <img src="./start.jpg">
   </div>
 </div>
 
@@ -186,15 +186,15 @@
    */
 
   window.addEventListener(CY.modules().FACE_AGE.eventName, (evt) => {
-    age_div.innerHTML = 'Edad estimada: ' + evt.detail.output.numericAge + ' años';
+    age_div.innerHTML = 'Likely Age: ' + evt.detail.output.numericAge + ' años';
   });
 
   window.addEventListener(CY.modules().FACE_GENDER.eventName, (evt) => {
-    gen_div.innerHTML = 'Género estimado: ' + evt.detail.output.mostConfident;
+    gen_div.innerHTML = 'Likely Gender: ' + evt.detail.output.mostConfident;
   });
 
   window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
-    emo_div.innerHTML = 'Emoción dominante: ' + evt.detail.output.dominantEmotion;
+    emo_div.innerHTML = 'Dominant Emotion: ' + evt.detail.output.dominantEmotion;
 
     // data for the histogram
     const emotions = evt.detail.output.emotion;
