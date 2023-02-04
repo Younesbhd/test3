@@ -1,10 +1,10 @@
 const EMOTIONS = [
-  "Enojo",
-  "Disgusto",
-  "Miedo",
-  "Felicidad",
-  "Tristeza",
-  "Asombro",
+  "Anger",
+  "Disgust",
+  "Fear",
+  "Happy",
+  "Sad",
+  "Surprise",
   "Neutral",
 ];
 EMOTIONS.ANGER = EMOTIONS[0];
